@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>prática Roleta</title>
+    <style>
+        body{text-align: center;}
+        p#tentRest{
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Roleta da Sorte</h1>
+    <p>O jogo é bom simples, basta digitar 5 valores entre 1 e 50, se acertar o número sorteado, você ganha o jogo!</p>
+    Digite: <input type="number" name="valores" id="valor"> <input type="button" value="Enviar" onclick="Verificar()">
+    <div><p id = "tentRest">Tentativas restantes: 5</p></div>
+    <div id = "resposta"></div>
+</body>
+</html>
