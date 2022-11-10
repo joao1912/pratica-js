@@ -18,6 +18,7 @@ function Verificar(){
     if (valor < 1 || valor > 50) {
         alert("[ERRO]: valor ínvalido!")
     } else {
+        valorRecebido.innerHTML = ""
         if (Nescolhidos.length != 0) {
             for (let c = 0 ; c < 4 ; c++) {
                 if (valor == Nescolhidos[c]) {
