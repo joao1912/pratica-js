@@ -83,4 +83,5 @@ function recomeçar() {
     resp_numeroSort.innerHTML = ``
     Nescolhidos = []
     numero_sorteado = sortear()
+    denovo.setAttribute("disabled","disabled")
 }
