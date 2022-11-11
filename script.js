@@ -7,6 +7,7 @@ let detecPerdedor = 1
 let tent = 5
 let valorRecebido = document.getElementById("valor")
 let resp_numeroSort = document.getElementById("numero_sort")
+let denovo = document.getElementById("denovo")
 
 
 function sortear(){
@@ -37,15 +38,18 @@ function Verificar(){
             Nescolhidos.push(valor)
             tentativas_restantes.innerHTML = `<ins>Tentativas restantes: ${tent}</ins>`
         }
+        
     }
 
   if (Nescolhidos.length == 5) {
         resul()    
   }
   
+
 }
 
 function resul() {
+    denovo.removeAttribute("disabled")
     for(let c = 0 ; c < 5 ; c++) {
         if (Nescolhidos[c] == numero_sorteado) {
             vencedor()
@@ -57,12 +61,26 @@ function resul() {
 }
 
 function vencedor() {
+    
     detecPerdedor = 0
     resultado.innerHTML = "[RESULTADO]: Você acertou o número vencedor, PARABENS!!!"
-    resp_numeroSort.innerHTML = `Número ganhador: ${numero_sorteado}`
+    resp_numeroSort.innerHTML = `<p><strong>O número vencedor é: ${numero_sorteado}</trong></p>`
+    valorRecebido.setAttribute("disabled","disabled")
 }
 
 function perdedor() {
-    resultado.innerHTML = "[RESULTADO]: Lamendo, você não digitou o número vencedor."
-    resp_numeroSort.innerHTML = `<p><strong>Número ganhador: ${numero_sorteado}</strong></p>`
+    resultado.innerHTML = "[RESULTADO]: Você não acertou o número vencedor."
+    resp_numeroSort.innerHTML = `<p><strong>O número vencedor é: ${numero_sorteado}</trong></p>`
+    valorRecebido.setAttribute("disabled","disabled")
+}
+
+function recomeçar() {
+    valorRecebido.removeAttribute("disabled")
+    valorRecebido.focus()
+    tent = 5
+    resultado.innerHTML = ""
+    tentativas_restantes.innerHTML = `<ins>Tentativas restantes: ${tent}</ins>`
+    resp_numeroSort.innerHTML = ``
+    Nescolhidos = []
+    numero_sorteado = sortear()
 }
