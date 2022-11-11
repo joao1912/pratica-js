@@ -63,13 +63,13 @@ function resul() {
 function vencedor() {
     
     detecPerdedor = 0
-    resultado.innerHTML = "[RESULTADO]: Você acertou o número vencedor, PARABENS!!!"
+    resultado.innerHTML = "[RESULTADO]: Você <strong><ins>acertou</ins><strong> o número vencedor, PARABENS!!!"
     resp_numeroSort.innerHTML = `<p><strong>O número vencedor é: ${numero_sorteado}</trong></p>`
     valorRecebido.setAttribute("disabled","disabled")
 }
 
 function perdedor() {
-    resultado.innerHTML = "[RESULTADO]: Você não acertou o número vencedor."
+    resultado.innerHTML = "[RESULTADO]: Você <strong><ins>não</ins></strong> acertou o número vencedor."
     resp_numeroSort.innerHTML = `<p><strong>O número vencedor é: ${numero_sorteado}</trong></p>`
     valorRecebido.setAttribute("disabled","disabled")
 }
